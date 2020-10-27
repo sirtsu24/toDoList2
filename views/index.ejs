@@ -1,0 +1,26 @@
+<%- include("header.ejs") -%> <!--lisame header faili siia-->
+
+    <div class="box" id="heading">
+        <h1><%= date %></h1> <!--siia tuleb kuupäev-->
+    </div>
+
+    <div class = "box"> 
+        <% for(var i = 0; i < toDoItems.length; i ++) { %>
+            <div class="item">
+                <input type = "checkbox">
+                <p><%= toDoItems[i].description %></p>
+            </div>
+
+
+       <% } %>
+    
+        <form action="/" class="class" method="POST">
+             <input type="text" name ="newTask" placeholder="New Task" autocomplete="off"> <!--autocomplete off lülitab välja, et browser pakuks automaatselt midagi-->
+             <button type="submit">+</button>
+        </form>
+</div>
+
+<%- include("footer.ejs") -%>
+  
+</body>
+</html>
